@@ -1,0 +1,19 @@
+name: Deploy to Bunny Edge Scripting
+
+on:
+  push:
+    branches: [ main ]  # Ou qualquer outra branch que você queira monitorar
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      # Você pode adicionar passos adicionais aqui, como testes ou build
+      
+      - name: Deploy Script to Bunny Edge Scripting
+        uses: BunnyWay/actions/deploy-script@main
+        with:
+          script_id: 22679  # O ID do seu script no Bunny
+          file: "src/main.ts"  # Caminho atualizado para refletir a localização correta
